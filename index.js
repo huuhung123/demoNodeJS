@@ -1,16 +1,13 @@
 // const Logger = require('./logger');
-
 // const logger = new Logger();
-
 // logger.on('message', (data) => console.log('Called Listener',data));
 
-// logger.log('Hello World');
-// logger.log('Hi');
-// logger.log('Hello');
 
 const http = require("http");
 const path = require("path");
 const fs = require("fs");
+
+//req.url, fs.readFile(res.writeHead, res.end(content, SJON.stringify(users))),
 
 const server = http.createServer((req, res) => {
   //     if(req.url === '/about') {
@@ -29,6 +26,7 @@ const server = http.createServer((req, res) => {
   //        res.writeHead(200, {'Content-Type':'application/json'})
   //        res.end(JSON.stringify(users))
   //    }
+
   //Build file path
   let filePath = path.join(
     __dirname,
@@ -79,5 +77,7 @@ const server = http.createServer((req, res) => {
   })
 });
 
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || 2000; //evironment variable
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+////Readable, writable, pipe, buffer, stream
